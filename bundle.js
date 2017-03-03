@@ -20041,6 +20041,7 @@
 	                this.__setEllipse(strokeColor, strokeWidth);
 	                this.__setBackground(bgColor);
 	                this.__downloadSVG();
+	                this.__downlaodImage();
 	            }
 
 	            return componentWillUpdate;
@@ -20057,6 +20058,7 @@
 	                this.__setEllipse(strokeColor, strokeWidth);
 	                this.__setBackground(bgColor);
 	                this.__downloadSVG();
+	                this.__downlaodImage();
 	            }
 
 	            return componentDidMount;
@@ -20075,6 +20077,36 @@
 	            }
 
 	            return __downloadSVG;
+	        }()
+	    }, {
+	        key: "__downlaodImage",
+	        value: function () {
+	            function __downlaodImage() {
+	                var svg = document.getElementById("logo-svg");
+	                var svgSize = svg.getBoundingClientRect();
+	                var svgData = new XMLSerializer().serializeToString(svg);
+
+	                var canvas = document.createElement("canvas");
+	                var ctx = canvas.getContext("2d");
+
+	                var img = document.createElement("img");
+
+	                var svgSize = svg.getBoundingClientRect();
+	                canvas.width = svgSize.width;
+	                canvas.height = svgSize.height;
+
+	                img.setAttribute("src", "data:image/svg+xml;base64," + btoa(svgData));
+
+	                img.onload = function () {
+	                    ctx.drawImage(img, 0, 0);
+	                    var imgsrc = canvas.toDataURL("image/png");
+	                    var a = document.getElementById("downloadLinkForImage");
+	                    a.href = imgsrc;
+	                    a.download = "react-logo.png";
+	                };
+	            }
+
+	            return __downlaodImage;
 	        }()
 	    }, {
 	        key: "render",
