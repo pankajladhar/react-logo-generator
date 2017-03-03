@@ -1,4 +1,5 @@
 import React from 'react';
+import  ReactDOM from 'react-dom';
 import _ from 'lodash';
 
 class Color extends React.Component{
@@ -29,7 +30,7 @@ class Color extends React.Component{
                             return <li key={option} style={{backgroundColor:color}} onClick={this.onClickOptionHandler}>{color}</li>
                         })
                     }
-                </ul>: ""}
+                </ul>: null}
                 <button style={{backgroundColor:options.option2}} onClick ={this.onClickHandler}>{colorName}</button>
             </div>
         )

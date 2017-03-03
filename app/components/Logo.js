@@ -25,12 +25,25 @@ class Logo extends React.Component{
         let { strokeColor, strokeWidth, bgColor } = this.props.svgColorObj;
         this.__setEllipse(strokeColor, strokeWidth);
         this.__setBackground(bgColor);
+        this.__downloadSVG();
     }
 
     componentDidMount(){
         let { strokeColor, strokeWidth, bgColor } = this.props.svgColorObj;
         this.__setEllipse(strokeColor, strokeWidth);
         this.__setBackground(bgColor);
+        this.__downloadSVG();
+        
+    }
+
+    __downloadSVG(){
+        let logoSVG = document.getElementById("logo-svg");
+        let svgData = logoSVG.outerHTML;
+        let svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
+        let svgUrl = URL.createObjectURL(svgBlob);
+        let downloadLink = document.getElementById("downloadLink");
+        downloadLink.href = svgUrl;
+        downloadLink.download = "react-logo.svg";
     }
 
     render(){
@@ -43,6 +56,7 @@ class Logo extends React.Component{
                     <path fill="none" d="M210.736,248.922 c33.649-58.348,73.281-107.724,110.92-140.48c45.35-39.466,88.507-54.923,111.775-41.505 c24.248,13.983,33.042,61.814,20.067,124.796c-9.81,47.618-33.234,104.212-65.176,159.601 c-32.749,56.788-70.25,106.819-107.377,139.272c-46.981,41.068-92.4,55.929-116.185,42.213 c-23.079-13.31-31.906-56.921-20.834-115.233C153.281,368.316,176.758,307.841,210.736,248.922z"/>
                     <path fill="none" d="M210.821,351.482 c-33.746-58.292-56.731-117.287-66.312-166.255c-11.544-58.999-3.382-104.109,19.864-117.566 c24.224-14.024,70.055,2.244,118.14,44.94c36.356,32.28,73.688,80.837,105.723,136.173c32.844,56.733,57.461,114.209,67.036,162.582 c12.117,61.213,2.309,107.984-21.453,121.74c-23.057,13.348-65.249-0.784-110.239-39.499 C285.567,460.886,244.898,410.344,210.821,351.482z"/>
                 </svg>
+                <a id="downloadLink" className="downloadLink">Download SVG</a>
             </div>   
         )
     }
