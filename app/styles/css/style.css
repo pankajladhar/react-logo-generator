@@ -15,6 +15,9 @@ body * {
   display: flex;
   padding: 20px;
   justify-content: space-between; }
+  @media screen and (max-width: 760px) {
+    .container {
+      flex-direction: column; } }
 
 .header {
   position: fixed;
@@ -54,19 +57,28 @@ body * {
           text-decoration: underline; }
         .socialIcons ul li a span {
           padding-left: 6px; }
+          @media screen and (max-width: 760px) {
+            .socialIcons ul li a span {
+              display: none; } }
         .socialIcons ul li a.socialIcons__linkedIn:hover i {
           color: #007bb6; }
 
 .svg-container {
-  width: 23%;
+  flex: 3;
+  margin-right: 30px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
   background: #fff;
   padding: 20px; }
+  @media screen and (max-width: 760px) {
+    .svg-container {
+      margin-right: 0;
+      margin-bottom: 20px;
+      padding: 15px; } }
   .svg-container .downloadLinks {
     display: flex; }
     .svg-container .downloadLinks .button {
       margin-top: 20px;
-      width: auto;
+      flex: 1;
       font-size: 12px;
       margin-right: 10px;
       background: #000;
@@ -79,9 +91,14 @@ body * {
       .svg-container .downloadLinks .button:hover {
         background: #fff;
         color: #000; }
+      @media screen and (max-width: 760px) {
+        .svg-container .downloadLinks .button {
+          width: 100%;
+          font-size: 11px;
+          padding: 0 8px; } }
 
 .colorContainer {
-  width: 74%; }
+  flex: 9; }
   .colorContainer .innerDiv {
     display: flex;
     flex-wrap: wrap;
@@ -131,6 +148,10 @@ body * {
   margin-right: 10px;
   margin-bottom: 10px;
   position: relative; }
+  @media screen and (max-width: 760px) {
+    .colorOptions {
+      flex: 1;
+      flex-basis: 40%; } }
   .colorOptions ul {
     margin: 0;
     padding: 0;
@@ -187,6 +208,9 @@ body * {
   color: #fff;
   text-transform: uppercase;
   transition: all 0.3s ease-out; }
+  @media screen and (max-width: 760px) {
+    .button {
+      width: 100%; } }
   .button:hover {
     box-shadow: 1px 6px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     transform: translateY(-2px); }

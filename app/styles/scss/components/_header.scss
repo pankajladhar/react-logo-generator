@@ -39,6 +39,9 @@
           }
           span{
             padding-left: 6px;
+            @media screen and (max-width: 760px){
+                display: none;
+            }
           }
           &.socialIcons__linkedIn{
             &:hover{

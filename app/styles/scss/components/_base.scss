@@ -16,4 +16,7 @@ body * {
   display: flex;
   padding: 20px;
   justify-content: space-between;
+  @media screen and (max-width: 760px){
+    flex-direction: column;
+  }
 }

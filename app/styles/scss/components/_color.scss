@@ -2,6 +2,10 @@
     margin-right: 10px;
     margin-bottom: 10px;
     position: relative;
+    @media screen and (max-width: 760px){
+        flex: 1;
+        flex-basis: 40%;
+    }
     ul{
         margin: 0;
         padding: 0;
@@ -27,6 +31,9 @@
     }
 }
 .button{   
+    @media screen and (max-width: 760px){
+        width: 100%;
+    }
     width: 150px; 
     box-sizing: border-box;
     position: relative;
