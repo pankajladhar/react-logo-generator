@@ -26,6 +26,7 @@ class Logo extends React.Component{
         this.__setEllipse(strokeColor, strokeWidth);
         this.__setBackground(bgColor);
         this.__downloadSVG();
+        this.__downlaodImage();
     }
 
     componentDidMount(){
@@ -33,6 +34,7 @@ class Logo extends React.Component{
         this.__setEllipse(strokeColor, strokeWidth);
         this.__setBackground(bgColor);
         this.__downloadSVG();
+        this.__downlaodImage();
         
     }
 
@@ -44,6 +46,31 @@ class Logo extends React.Component{
         let downloadLink = document.getElementById("downloadLink");
         downloadLink.href = svgUrl;
         downloadLink.download = "react-logo.svg";
+    }
+
+    __downlaodImage() {
+        let svg = document.getElementById("logo-svg");
+        var svgSize = svg.getBoundingClientRect();
+        var svgData = new XMLSerializer().serializeToString(svg);
+
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+
+        var img = document.createElement("img");
+
+        var svgSize = svg.getBoundingClientRect();
+        canvas.width = svgSize.width;
+        canvas.height = svgSize.height;
+
+        img.setAttribute("src", "data:image/svg+xml;base64," + btoa(svgData));
+
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+            var imgsrc = canvas.toDataURL("image/png");
+            let a = document.getElementById("downloadLinkForImage");
+            a.href = imgsrc;
+            a.download = "react-logo.png";
+        };
     }
 
     render(){
