@@ -31,7 +31,7 @@ class Color extends React.Component{
                         })
                     }
                 </ul>: null}
-                <button style={{backgroundColor:options.option2}} onClick ={this.onClickHandler}>{colorName}</button>
+                <button className="button" style={{backgroundColor:options.option2}} onClick ={this.onClickHandler}>{colorName}</button>
             </div>
         )
     }

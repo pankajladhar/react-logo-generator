@@ -14,3 +14,40 @@
     padding: 0 16px;
     z-index: 999;
 }
+
+.socialIcons{
+  flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    ul{
+      margin: 0;
+      padding: 0;
+      li {
+        float: left;
+        padding-left: 20px;
+        list-style: none;
+        a{
+          display: block;
+          color: #fff;
+          text-decoration: none;
+          .fa{
+            font-size: 30px
+          }
+          &:hover{
+            text-decoration: underline;
+          }
+          span{
+            padding-left: 6px;
+          }
+          &.socialIcons__linkedIn{
+            &:hover{
+              i{
+                color: #007bb6;
+              }
+            }
+          }
+        }
+      } 
+    }
+}

@@ -1,0 +1,27 @@
+.svg-container{
+    width: 23%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    padding: 20px;
+    .downloadLinks{
+        display: flex;
+        .button{    
+            margin-top: 20px;
+            width: auto;
+            font-size: 12px;
+            margin-right: 10px;
+            background: #000;
+            color: #fff;
+            will-change: opacity, transform;
+            transition: all 0.3s ease-out;
+            border: 1px #000 solid;
+            &:last-child{
+                margin-right: 0;
+            }
+            &:hover{
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+}
