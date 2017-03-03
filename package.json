@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "release" : "sh ./build.sh",
     "test": "mocha setup.js test/**/*-test.js && exit 0",
     "test-watch": "mocha -w setup.js test/**/*-test.js && exit 0",
     "build": "webpack",
